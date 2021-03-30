@@ -1,0 +1,38 @@
+
+add(a) {
+  a.salary += 100;
+  return a.salary;
+}
+mul(a) {
+  a.salary *= 2;
+  return a;
+} 
+
+
+addi(a) {
+  return a+10;
+}
+muli(a) {
+  return a*10;
+} 
+Function compose(f1,f2)
+{
+  return (x) 
+  {
+    return f1(f2(x));
+    
+  };
+}
+Function del = compose(add,mul);
+void main() {
+  List a = [App(salary:10),App(salary:20),App(salary:30),App(salary:40)];
+  List b = [10,20,30,40];
+ 
+  var c = a.map(del).toList();
+  print(c);
+//   b.map((d) => print(d.salary)).toList();
+}
+class App{
+int salary;
+App({this.salary});
+}
